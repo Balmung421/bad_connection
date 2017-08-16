@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative 'bad'
+require_relative 'bad_connection'
 
 class BadConnectionTest < Minitest::Test
 
@@ -23,5 +23,11 @@ class BadConnectionTest < Minitest::Test
     greeting = "HELLO, THIS IS A GROCERY STORE!"
     assert_equal "HELLO, THIS IS A GROCERY STORE!", bad.greeting
   end
+  
+  def test_for_input
+
+  end
+
+
 
 end
