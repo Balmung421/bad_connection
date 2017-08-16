@@ -23,10 +23,10 @@ class BadConnectionTest < Minitest::Test
     greeting = "HELLO, THIS IS A GROCERY STORE!"
     assert_equal "HELLO, THIS IS A GROCERY STORE!", bad.greeting
   end
-  
-  def test_for_input
 
-  end
+  # def test_for_input
+  #
+  # end
 
 
 

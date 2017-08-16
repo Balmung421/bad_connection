@@ -1,44 +1,19 @@
-require 'pry'
-class BadConnection
+ask_input = 'What would you like to say? > '
+reply_not_upcase = 'I AM HAVING A HARD TIME HEARING YOU.'
+reply_all_upcase = 'NO, THIS IS NOT A PET STORE'
+reply_goodbye = 'ANYTHING ELSE I CAN HELP WITH?'
+exit_phrase = 'GOODBYE!'
+exit_phrase_count = 0
 
-
-  def initialize
-
+while exit_phrase_count < 2
+  puts ask_input
+  input = gets.chomp
+  if input.upcase != input
+    puts reply_not_upcase
+  elsif input.upcase == input && input != exit_phrase
+    puts reply_all_upcase
+  elsif input == exit_phrase
+    puts reply_goodbye
+    exit_phrase_count += 1
   end
-
-  def ready_to_quit
-    ready_to_quit = false
-    greeting
-    while ready_to_quit == false
-      get_input
-      if get_input == reply_not_upcase
-        puts "I AM HAVING A HARD TIME HEARING YOU."
-      elsif get_input == reply_all_upcase
-        puts "NO,THIS IS NOT A PET STORE"
-      elsif get_input == "GOODBYE!"
-        goodbye += 1
-      end
-    end
-  end
-
-  def greeting
-   "HELLO, THIS IS A GROCERY STORE!"
-  end
-
-  def get_input
-    puts "Hello?!"
-    input = gets.chomp
-    ready_to_quit
-  end
-
-  def reply_not_upcase
-    get_input != get_input.upcase
-  end
-
-  def reply_all_upcase
-    get_input != get_input.downcase
-  end
-
 end
-
-input = BadConnection.new.get_input
